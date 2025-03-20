@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+  <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png">
+
+  <title>Conference Ticket Generator</title>
+
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  
+  <div class="container">
+    <img src="./assets/images/logo-full.svg" alt="logoSvg" width="15%">
+
+    <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+
+    <span class="subtitulo">Secure your spot at next year's biggest coding conference.</span>
+
+    <form action="#">
+
+      <label class="rotuloFormulario">Upload Avatar</label>
+      <input type="file" id="carregarArquivo" name="avatar" accept="image/jpeg, image/png">
+
+      <label for="carregarArquivo" class="rotuloCarregarArquivo">
+        <div class="previewCarregarArquivo">
+          <img src="./assets/images/icon-upload.svg" alt="upload icon">
+        </div>
+        <span style="text-align: center;" id="instrucaoUpload">Drag and drop or click to upload</span>
+      </label>
+
+      <span id="rotuloInformacao">ⓘ Upload your photo (JPG or PNG, max size: 500KB).</span>
+
+      <label for="nomeCompleto" class="semHover">Full Name</label>
+      <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Aaryaveer Rajput" required>
+
+      <label for="emailUsuario" class="semHover">Email Address</label>
+      <input type="email" name="email" id="emailUsuario" placeholder="example@email.com" required>
+      <div id="erroEmail" style="margin: -10px 0 10px 0;font-size: 12px;"></div>
+
+      <label for="usuarioGithub" class="semHover">Github Username</label>
+      <input type="text" name="usuarioGithub" id="usuarioGithub" placeholder="@yourusername" required>
+
+      <input type="submit" value="Generate My Ticket">
+
+    </form>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>

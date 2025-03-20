@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('./assets/fonts/static/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: 400; /* 400 em vez de normal */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('./assets/fonts/static/Inconsolata-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('./assets/fonts/static/Inconsolata-Bold.ttf') format('truetype');
+    font-weight: 700; /* 700 em vez de bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('./assets/fonts/static/Inconsolata-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+
+    --gradient-text: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Inconsolata', sans-serif;
+}
+
+.container > p:first-of-type, h1 {
+    text-align: center;
+    width: 50%;
+}
+
+/* Container do formulário */
+.container {
+    background:
+        url('./assets/images/pattern-squiggly-line-bottom-desktop.svg') no-repeat 0 bottom,
+        url('./assets/images/pattern-squiggly-line-top.svg') no-repeat top right,
+        url('./assets/images/pattern-lines.svg') repeat,
+        url('./assets/images/background-desktop.png') no-repeat center center;
+    background-size: 60%, 30%, cover, cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+    max-width: 900px;
+    height: 700px;
+    color: var(--neutral-0);
+}
+
+/* Aplicando gradiente ao texto */
+#nomeCompleto {
+    color: transparent;
+    background-image: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Corrigindo o problema do ponto de exclamação */
+#nomeCompleto::after {
+    content: "!";
+    color: var(--gradient-text);
+}
+
+#email {
+    color: var(--orange-500);
+}
+
+/* Container do ingresso */
+.containerIngresso {
+    background: url(./assets/images/pattern-ticket.svg) no-repeat center center;
+    background-size: contain;
+    height: auto;
+    margin-top: 50px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5%;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#logoSvg {
+    width: 15%;
+    transform: scale(0.7);
+    align-self: flex-start;
+}
+
+#avatarSvg {
+    width: 15%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.conteudoTexto {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.subtitulo {
+    color: var(--neutral-300);
+    font-size: 15px;
+}
+
+.github {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.github img {
+    display: inline-block;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 1450px) and (min-width: 700px) {
+    .containerIngresso {
+        gap: 15px;
+        height: auto;
+    }
+
+    .overlay {
+        height: 40%;
+    }
+
+    .conteudoTexto {
+        gap: 2px;
+    }
+
+    .titulo {
+        font-size: 15px;
+    }
+
+    .subtitulo {
+        font-size: 10px;
+    }
+
+    .github {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 700px) and (min-width: 460px) {
+    .container {
+        width: 100vw;
+        height: 80vh;
+    }
+
+    .container h1 {
+        font-size: 15px;
+    }
+
+    .container > p:first-of-type {
+        font-size: 10px;
+    }
+
+    .containerIngresso {
+        gap: 15px;
+        justify-content: space-between;
+    }
+
+    .overlay {
+        height: 20%;
+    }
+
+    .titulo {
+        font-size: 10px;
+    }
+
+    .subtitulo {
+        font-size: 8px;
+    }
+
+    .github {
+        gap: 2px;
+    }
+
+    .github img {
+        width: 10%;
+    }
+}
+
+@media (max-width: 460px) {
+    .container {
+        background:
+            url('./assets/images/pattern-squiggly-line-bottom-desktop.svg') no-repeat 0 bottom,
+            url('./assets/images/pattern-squiggly-line-top.svg') no-repeat top right,
+            url('./assets/images/pattern-lines.svg') repeat,
+            url('./assets/images/background-mobile.png') no-repeat center center;
+        background-size: 60%, 30%, cover, cover;
+        width: 100vw;
+        height: 80vh;
+    }
+
+    .container h1 {
+        font-size: 15px;
+    }
+
+    .container > p:first-of-type {
+        font-size: 10px;
+    }
+
+    .containerIngresso {
+        justify-content: center;
+    }
+
+    .overlay {
+        height: 20%;
+    }
+
+    .titulo {
+        font-size: 10px;
+    }
+
+    .subtitulo {
+        font-size: 5px;
+    }
+
+    .github {
+        gap: 2px;
+    }
+
+    .github img {
+        width: 10%;
+    }
+}

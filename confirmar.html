@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png">
+
+  <title>Conference Ticket Generator</title>
+
+  <link rel="stylesheet" href="./confirmar.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="./assets/images/logo-full.svg" alt="logoSvg" width="15%">
+
+    <h1>Congrats, <span id="nomeCompleto" class="nomeUsuario"></span> Your ticket is ready.</h1>
+    <p>
+      We've emailed your ticket to <span id="email"></span> and will send updates in the run up to the event.
+    </p>
+
+    <div class="containerIngresso">
+      <div class="overlay informacoesConferencia">
+        <img src="./assets/images/logo-mark.svg" alt="logoSvg" id="logoSvg">
+        <div class="conteudoTexto">
+          <h2 class="titulo nomeCompleto">Coding Conf</h2>
+          <p class="subtitulo">January 31, 2025 / Austin, TX</p>
+        </div>
+      </div>
+      <div class="overlay informacoesConferencia">
+        <img src="./assets/images/image-avatar.jpg" alt="avatarSvg" id="avatarSvg">
+        <div class="conteudoTexto">
+          <h2 class="titulo nomeUsuario"></h2>
+          <div class="github">
+            <img src="./assets/images/icon-github.svg" alt="logoGithub">
+            <p class="subtitulo" id="usuarioGithub"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./confirmar.js"></script>
+</body>
+
+</html>
